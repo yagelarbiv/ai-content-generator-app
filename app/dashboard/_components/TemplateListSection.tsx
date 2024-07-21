@@ -40,4 +40,4 @@ const TemplateListSection = ({searchInput}:{searchInput:string}) => {
   );
 };
 
-export default TemplateListSection
+export default TemplateListSection;
