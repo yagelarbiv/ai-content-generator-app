@@ -5,13 +5,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Loader2Icon } from 'lucide-react';
 
 function FormSection({
   selectedTemplate,
-  userformInput
+  userformInput,
+  loading
 }: {
   selectedTemplate: TEMPLATE | undefined;
   userformInput: any;
+  loading: boolean
 }) {
   const [formData, setFormData] = useState({});
 
@@ -51,7 +54,7 @@ function FormSection({
             )}
           </div>
         ))}
-        <Button type='submit' className='w-full py-6'>Generate Content</Button>
+        <Button type='submit' className='w-full py-6' disabled={loading}>{loading && <Loader2Icon className="animate-spin mr-2" /> }Generate Content</Button>
       </form>
     </div>
   );
